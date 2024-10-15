@@ -6,10 +6,12 @@ function Navbar() {
 
 
     return (<>
-        <div>
-            <Link to="/register">Register</Link>
-            <Link to="/Login">Login</Link>
-            <Link to="/Products">Products</Link>
+        <div className="navbar">
+        <h1 className="firstList-title">Welcome to Afrizone</h1>
+            <Link className="navigationLink" to="/"></Link>
+            <Link className="navigationLink" to="/register">Register</Link>
+            <Link className="navigationLink" to="/Login">Login</Link>
+            
         </div>
     </>)
 }

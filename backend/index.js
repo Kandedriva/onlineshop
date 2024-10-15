@@ -52,12 +52,6 @@ app.get("/login", (req, res)=>{
     } 
 })
 
-// app.get("/login", (req, res)=>{
-//     // console.log(req.user)
-  
-//     res.send("Please, Log in Now..!")
-// })
-
 app.get("/products", async(req, res)=>{
         try {
         const products = await db.query("SELECT * FROM products")

@@ -34,7 +34,13 @@ function Products(){
 
 
     return (<>
-    {getUser?.firstname && <h1>Welcome, {getUser.firstname}</h1>}  
+    <div className="productPAge-Title">
+    {getUser?.firstname && <h1 className="user-Navbar">Welcome to Afrizone, {getUser.firstname}</h1>}  
+    <button className="cartAndLogout">Crart</button>
+    <button className="cartAndLogout" >Log out</button>
+
+    </div>
+   
     {
         products.map(product=>(
        <form key={product.productid} onSubmit={addToCart}>

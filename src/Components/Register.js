@@ -1,9 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 
 function Register(){
+
+    const navigate = useNavigate()
 
     const [registration, setRegitration] = useState({
         firstname: "",
@@ -36,10 +39,26 @@ function Register(){
         axios.post("http://localhost:5001/registration", newUser)
         .then(res =>console.log(res.data))
         .catch(error =>console.error("There is an error..!", error))
+
+    }
+
+
+    function goToLogin(){
+        navigate("/login")
+
+    }
+    function backToProduct(){
+        navigate("/")
     }
 
     return(
         <>
+        <div className="welcomeText">
+        <h3>Hey there, Welcome to Afrizone.! Thank your for visiting us. To start shopping, please Create an account.</h3>
+        <button onClick={backToProduct}>Go to products</button>
+
+        </div>
+       
             <form onSubmit={handleRegistration}>
                 <div className="registration-form">
                 <h1>Registration</h1>
@@ -60,11 +79,11 @@ function Register(){
                         <input placeholder="choose a password"  type="password" name="password" onChange={handlinput}  autoComplete="off"></input>
                     </div>
                    <div>
-                   <button className="registration-button">Register</button>
+                   <button className="registration-button" >Register</button>
                    </div>
                    <div>
                    <p>Or if your already have an account, </p>
-                    <button>Login here</button>
+                    <button onClick={goToLogin}>Login here</button>
                    </div>
                 </div>
             </form>

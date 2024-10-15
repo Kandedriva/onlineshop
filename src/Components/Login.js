@@ -43,8 +43,17 @@ function Login() {
             .catch(error => console.error("There is an error..!", error))
     }
 
+    function backToProduct(){
+        navigate("/")
+    }
+
 
     return (<>
+    <div className="welcomeText">
+    <h3>Please Log in to start shopping.</h3>
+    <button onClick={backToProduct}>Go to products</button>
+
+    </div>
         <form onSubmit={logTheUserIn}>
             <div className="registration-form loginContainer">
                 <h1>Login</h1>
